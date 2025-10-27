@@ -268,3 +268,27 @@ aside li span.es {
 .star.filled {
   background-color: #17abb3; /* étoile remplie */
 }
+
+.stars {
+  display: inline-flex;
+  gap: 6px; /* espace entre les étoiles */
+  vertical-align: middle;
+}
+
+/* Liste des compétences - ajustement du positionnement des étoiles */
+aside ul:first-of-type li:nth-child(1) .stars {
+    margin-left: 100px; /* HTML */
+}
+
+aside ul:first-of-type li:nth-child(2) .stars {
+    margin-left: 118px; /* CSS */
+}
+
+aside ul:first-of-type li:nth-child(3) .stars {
+    margin-left: 66px; /* JavaScript */
+}
+
+aside ul:first-of-type li:nth-child(4) .stars {
+    margin-left: 114px; /* PHP */
+}
+

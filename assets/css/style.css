@@ -6,6 +6,12 @@
         flex-direction: column;
     }
 
+        aside, section {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
 @font-face {
     font-family: "Raleway" ;
     src: url(../fonts/Raleway-VariableFont_wght.woff) format('woff'),
@@ -45,10 +51,6 @@ header {
     align-items: center;  
 }
 
-header a img.photo-profil {
-    transition: transform 0.3s ease; /* animation douce */
-}
-
 header a img.photo-profil:hover {
     transform: scale(1.05); /* zoom léger au survol */
 }
@@ -61,15 +63,42 @@ header a img.photo-profil {
     object-fit: cover;
     margin: 40px 100px 40px 100px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease;/* animation douce */
 }
 
-
-
-    aside, section {
-        width: 100%;
-        padding: 10px;
-    }
+.header-text {
+    display: flex;
+    flex-direction: column; /* empile h1, h2 et address verticalement */
+    color: #ffffff;
 }
+
+.header-text h1, 
+.header-text h2 {
+   margin: 0; /* supprime la marge par défaut */
+   }
+
+.header-text h2 {
+   margin-top: 5px;  /* ajoute un petit espace si nécessaire */
+    
+}
+
+.header-text address a {
+    text-decoration: none;
+    color: #fff; /* par exemple pour rester visible sur le header */
+}
+
+.header-text address {
+    display: flex;
+    flex-direction: column; /* deux lignes verticales */
+    gap: 5px;               /* petit espace entre ligne1 et ligne2 */
+    margin-top: 5px;        /* espace sous le h2 */
+}
+
+.header-text address .ligne1,
+.header-text address .ligne2 {
+    display: flex;          /* éléments sur la même ligne */
+    gap: 15px;              /* espace entre chaque item de la ligne */
+}
+
 
 

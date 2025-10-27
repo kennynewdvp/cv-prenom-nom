@@ -112,3 +112,8 @@ header a img.photo-profil {
     align-items: center;
 }
 
+.header-text address .element {
+    display: flex;
+    align-items: center;
+    gap: 5px;                /* espace entre icône et texte */
+}

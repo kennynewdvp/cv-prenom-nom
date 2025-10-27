@@ -68,7 +68,7 @@ header a img.photo-profil {
 
 .header-text {
     display: flex;
-    flex-direction: column; /* empile h1, h2 et address verticalement */
+    flex-direction: column; 
     color: #ffffff;
     margin-left: 150px;
 
@@ -80,7 +80,7 @@ header a img.photo-profil {
    }
 
 .header-text h2 {
-   margin-top: 5px;  /* ajoute un petit espace si nécessaire */
+   margin-top: 5px;  
 }
 
 .header-text h1{
@@ -89,21 +89,41 @@ header a img.photo-profil {
 
 .header-text address a {
     text-decoration: none;
-    color: #fff; /* par exemple pour rester visible sur le header */
+    color: #fff; 
 }
 
 .header-text address {
     display: flex;
     flex-direction: column; /* deux lignes verticales */
     gap: 10px;               /* petit espace entre ligne1 et ligne2 */
-    margin-top: 5px;        /* espace sous le h2 */
+    margin-top: 25px;        
     padding-left: 70px;
 }
 
-.header-text address .ligne1,
-.header-text address .ligne2 {
-    display: flex;          /* éléments sur la même ligne */
-    gap: 50px;         /* espace entre chaque item sur la ligne */
+.header-text address .ligne1 {
+    display: flex;
+    gap: 130px;      
+    align-items: center;
 }
 
+.header-text address .ligne2 {
+    display: flex;
+    gap: 80px;      
+    align-items: center;
+}
+
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;             /* taille du fond rond */
+    height: 30px;
+    background-color: #ffffff; /* rond blanc derrière l’icône */
+    border-radius: 50%;
+}
+
+.icon-wrapper img {
+    width: 16px;             /* taille de l’icône PNG */
+    height: 16px;
+}
 

@@ -12,12 +12,6 @@
     }
 }
 
-@font-face {
-    font-family: "Raleway" ;
-    src: url(../fonts/Raleway-VariableFont_wght.woff) format('woff'),
-         url(../fonts/Raleway-VariableFont_wght.ttf) format('truetype');
-}
-
 h1,h2 {
     font-family: 'Lato', sans-serif;
 }
@@ -169,14 +163,73 @@ aside ul:nth-of-type(4) li::marker {
     color: #17abb3; 
 }
 
-main *:not(h2):not(time) {
-    color: #333333;
-    font-weight: 600;
+/* FONT FACE */
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-VariableFont_wght.woff") format("woff"),
+       url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 600; 
+  font-style: normal;
 }
 
-/* Seules les deux premières listes de aside (Compétences et Langues) */
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Bold.woff") format("woff"),
+       url("../fonts/Raleway-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* MAIN : texte général */
+main *:not(h2):not(time) {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* ASIDE : listes Compétences et Langues */
 aside ul:first-of-type li,
 aside ul:nth-of-type(2) li {
-    
+    font-weight: 700;
 }
+
+/* SECTION : titres et dates */
+section h2,
+section time {
+    color: #17abb3;
+    font-weight: 700;
+}
+
+/* SECTION : tous les li sauf small et time */
+section li:not(time):not(small) {
+    font-weight: 700;
+}
+
+section ul li small {
+    display: block;      /* force small à aller en dessous */
+    margin-top: 2px;     /* petit espace au-dessus si besoin */
+  
+}
+
+/* ===========================
+   ASIDE : texte plus grand
+=========================== */
+
+/* paragraphes et spans dans aside */
+aside p,
+aside span {
+    font-size: 1.1em; /* ajuster selon rendu souhaité */
+}
+
+/* small dans aside */
+aside small {
+    font-size: 1em; /* un peu plus grand que par défaut */
+}
+
+/* les deux dernières listes de aside (Qualités et Centres d'intérêt) */
+aside ul:nth-of-type(3) li,
+aside ul:nth-of-type(4) li {
+    font-size: 1.1em;
+}
+
 

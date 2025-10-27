@@ -74,18 +74,18 @@ header a img.photo-profil {
 
 }
 
-.header-text h1, 
-.header-text h2 {
-   margin: 0; /* supprime la marge par défaut */
-   }
-
-.header-text h2 {
-   margin-top: 5px;  
+.header-text h1, .header-text h2 {
+    margin: 0;
 }
 
-.header-text h1{
+.header-text h1 {
     margin-left: 20px;
 }
+
+.header-text h2 {
+    margin-top: 5px;
+}
+
 
 .header-text address a {
     text-decoration: none;
@@ -97,19 +97,25 @@ header a img.photo-profil {
     flex-direction: column; /* deux lignes verticales */
     gap: 10px;               /* petit espace entre ligne1 et ligne2 */
     margin-top: 25px;        
-    padding-left: 70px;
+    padding-left: 60px;
 }
 
-.header-text address .ligne1 {
+.header-text address .ligne1,
+.header-text address .ligne2 {
     display: flex;
-    gap: 130px;      
     align-items: center;
+}
+
+.header-text address .ligne1 { gap: 100px; }
+.header-text address .ligne2 { gap: 54px; }
+
+
+.header-text address .ligne1 {
+    gap: 100px;     
 }
 
 .header-text address .ligne2 {
-    display: flex;
-    gap: 80px;      
-    align-items: center;
+    gap: 54px;      
 }
 
 .header-text address .element {

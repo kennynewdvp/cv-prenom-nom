@@ -197,11 +197,6 @@ aside ul:nth-of-type(2) li {
     font-weight: 700;
 }
 
-/* Espace entre le texte principal et le span dans la liste Langues */
-aside ul:nth-of-type(2) li span {
-    margin-left: 50px; /* ajuste selon le rendu */
-    font-weight: 600;  /* facultatif, si tu veux garder un peu de distinction */
-}
 
 
 /* Aside - texte plus grand */
@@ -247,13 +242,13 @@ aside small {
 }
 
 aside li span.fr {
-    margin-left: 20px; /* ajuste pour Français */
+    margin-left: 60px; /* ajuste pour Français */
 }
 
 aside li span.en {
-    margin-left: 30px; /* ajuste pour Anglais */
+    margin-left: 110px; /* ajuste pour Anglais */
 }
 
 aside li span.es {
-    margin-left: 40px; /* ajuste pour Espagnol */
+    margin-left: 140px; /* ajuste pour Espagnol */
 }

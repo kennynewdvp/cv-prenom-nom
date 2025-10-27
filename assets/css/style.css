@@ -103,15 +103,7 @@ header a img.photo-profil {
 .header-text address .ligne1,
 .header-text address .ligne2 {
     display: flex;          /* éléments sur la même ligne */
-}
-
-.header-text address div {
-    margin-bottom: 5px; /* espace entre chaque élément */
-}
-
-.header-text address div a {
-    text-decoration: none; /* liens sans soulignement */
-    color: #fff;
+    gap: 50px;         /* espace entre chaque item sur la ligne */
 }
 
 

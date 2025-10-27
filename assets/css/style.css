@@ -125,15 +125,6 @@ header a img.photo-profil:hover {
 .header-text address .ligne1 { gap: 100px; }
 .header-text address .ligne2 { gap: 54px; }
 
-
-.header-text address .ligne1 {
-    gap: 100px;     
-}
-
-.header-text address .ligne2 {
-    gap: 54px;      
-}
-
 .header-text address .element {
     display: flex;
     align-items: center;

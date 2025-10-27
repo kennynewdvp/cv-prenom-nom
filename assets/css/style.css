@@ -24,6 +24,7 @@ h1,h2 {
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-color:#f5f5f5 ;
 }
 
 .container {
@@ -39,13 +40,22 @@ main {
 }
 
 aside,section {
-    width: 50%;
     padding: 20px;
     box-sizing: border-box;
 }
 
+aside {
+    width:30%;
+    background-color:#e3e3e3 ;
+}
 
-header {
+section {
+    width:70%;
+    background-color:#ffffff ;
+}
+
+
+header,footer {
     background-color: #17abb3;
     display: flex;        
     align-items: center;  
@@ -106,10 +116,6 @@ header a img.photo-profil {
     align-items: center;
 }
 
-.header-text address .ligne1 { gap: 100px; }
-.header-text address .ligne2 { gap: 54px; }
-
-
 .header-text address .ligne1 {
     gap: 100px;     
 }
@@ -122,4 +128,13 @@ header a img.photo-profil {
     display: flex;
     align-items: center;
     gap: 5px;                /* espace entre icône et texte */
+}
+
+aside h2,
+section h2 {
+    color: #17abb3;
+}
+
+section time {
+    color: #17abb3;
 }

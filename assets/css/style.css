@@ -233,3 +233,23 @@ aside ul:nth-of-type(4) li {
 }
 
 
+/* SECTION : tous les li */
+.section-li {
+    display: flex;       /* place le li et les time sur la même ligne */
+    align-items: center; /* aligne verticalement */
+    flex-wrap: wrap;     /* permet au small de passer en dessous */
+    margin-bottom: 10px; /* espace entre les items */
+}
+
+/* small : sous le li */
+.section-small {
+    display: block;      /* force small en dessous */
+    margin-top: 2px;     /* petit espace au-dessus */
+    font-size: 1em;      /* ajuste selon ton rendu */
+}
+
+/* time : à côté du li */
+.section-time {
+    margin-left: 5px;    /* petit espace entre li et time */
+    color: #17abb3;
+}

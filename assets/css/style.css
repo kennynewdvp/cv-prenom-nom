@@ -70,6 +70,8 @@ header a img.photo-profil {
     display: flex;
     flex-direction: column; /* empile h1, h2 et address verticalement */
     color: #ffffff;
+    margin-left: 150px;
+
 }
 
 .header-text h1, 
@@ -79,7 +81,10 @@ header a img.photo-profil {
 
 .header-text h2 {
    margin-top: 5px;  /* ajoute un petit espace si nécessaire */
-    
+}
+
+.header-text h1{
+    margin-left: 20px;
 }
 
 .header-text address a {
@@ -90,15 +95,23 @@ header a img.photo-profil {
 .header-text address {
     display: flex;
     flex-direction: column; /* deux lignes verticales */
-    gap: 5px;               /* petit espace entre ligne1 et ligne2 */
+    gap: 10px;               /* petit espace entre ligne1 et ligne2 */
     margin-top: 5px;        /* espace sous le h2 */
+    padding-left: 70px;
 }
 
 .header-text address .ligne1,
 .header-text address .ligne2 {
     display: flex;          /* éléments sur la même ligne */
-    gap: 15px;              /* espace entre chaque item de la ligne */
 }
 
+.header-text address div {
+    margin-bottom: 5px; /* espace entre chaque élément */
+}
+
+.header-text address div a {
+    text-decoration: none; /* liens sans soulignement */
+    color: #fff;
+}
 
 

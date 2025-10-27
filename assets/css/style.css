@@ -110,13 +110,7 @@ header a img.photo-profil {
 .header-text address .ligne2 { gap: 54px; }
 
 
-.header-text address .ligne1 {
-    gap: 100px;     
-}
 
-.header-text address .ligne2 {
-    gap: 54px;      
-}
 
 .header-text address .element {
     display: flex;

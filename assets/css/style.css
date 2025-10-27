@@ -1,102 +1,118 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
-
-        aside, section {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-@font-face {
-    font-family: "Raleway" ;
-    src: url(../fonts/Raleway-VariableFont_wght.woff) format('woff'),
-         url(../fonts/Raleway-VariableFont_wght.ttf) format('truetype');
-}
-
-h1,h2 {
-    font-family: 'Lato', sans-serif;
+/* ===========================
+   GLOBAL
+=========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
 }
 
+/* ===========================
+   FONTS
+=========================== */
+h1, h2 {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Font-face Raleway */
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-VariableFont_wght.woff") format("woff"),
+         url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Bold.woff") format("woff"),
+         url("../fonts/Raleway-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ===========================
+   CONTAINERS
+=========================== */
 .container {
     width: 100%;
-    max-width:1160px;
+    max-width: 1160px;
     margin: auto;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 main {
     display: flex;
 }
 
-aside,section {
-    width: 50%;
+aside, section {
     padding: 20px;
-    box-sizing: border-box;
 }
 
+/* ===========================
+   ASIDE & SECTION 
+=========================== */
+aside {
+    width: 30%;
+    background-color: #e3e3e3;
+}
 
+section {
+    width: 70%;
+    background-color: #ffffff;
+}
+
+/* ===========================
+   HEADER
+=========================== */
 header {
     background-color: #17abb3;
-    display: flex;        
-    align-items: center;  
-}
-
-header a img.photo-profil:hover {
-    transform: scale(1.05); /* zoom léger au survol */
+    display: flex;
+    align-items: center;
 }
 
 header a img.photo-profil {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid #ffffff ;
+    border: 3px solid #fff;
     object-fit: cover;
-    margin: 40px 100px 40px 100px;
+    margin: 40px 100px;
     cursor: pointer;
-    transition: transform 0.3s ease;/* animation douce */
+    transition: transform 0.3s ease;
+}
+
+header a img.photo-profil:hover {
+    transform: scale(1.05);
 }
 
 .header-text {
     display: flex;
-    flex-direction: column; 
-    color: #ffffff;
+    flex-direction: column;
+    color: #fff;
     margin-left: 150px;
-
 }
 
 .header-text h1, .header-text h2 {
     margin: 0;
 }
 
-.header-text h1 {
-    margin-left: 20px;
-}
-
-.header-text h2 {
-    margin-top: 5px;
-}
-
-
-.header-text address a {
-    text-decoration: none;
-    color: #fff; 
-}
+.header-text h1 { margin-left: 20px; }
+.header-text h2 { margin-top: 5px; }
 
 .header-text address {
     display: flex;
-    flex-direction: column; /* deux lignes verticales */
-    gap: 10px;               /* petit espace entre ligne1 et ligne2 */
-    margin-top: 25px;        
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
     padding-left: 60px;
 }
 
@@ -110,10 +126,237 @@ header a img.photo-profil {
 .header-text address .ligne2 { gap: 54px; }
 
 
+.header-text address .ligne1 {
+    gap: 100px;     
+}
 
+.header-text address .ligne2 {
+    gap: 54px;      
+}
 
 .header-text address .element {
     display: flex;
     align-items: center;
-    gap: 5px;                /* espace entre icône et texte */
+    gap: 5px;
+}
+
+.header-text address a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===========================
+   TITLES
+=========================== */
+aside h2,
+section h2 {
+    color: #17abb3;
+}
+
+/* ===========================
+   LISTES
+=========================== */
+section ul,
+aside ul:first-of-type,
+aside ul:nth-of-type(2) {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Carrés colorés pour dernières listes */
+aside ul:nth-of-type(3),
+aside ul:nth-of-type(4) {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+aside ul:nth-of-type(3) li::marker,
+aside ul:nth-of-type(4) li::marker {
+    color: #17abb3;
+}
+
+/* ===========================
+   MAIN TEXT
+=========================== */
+main *:not(h2):not(time) {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Bold sur premières listes de aside */
+aside ul:first-of-type li,
+aside ul:nth-of-type(2) li {
+    font-weight: 700;
+}
+
+/* Texte plus grand dans aside */
+aside p,
+aside span,
+aside ul:nth-of-type(3) li,
+aside ul:nth-of-type(4) li,
+aside small {
+    font-size: 1.1em;
+}
+
+/* ===========================
+   SECTION LI + TIME + SMALL
+=========================== */
+.section-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.section-li:hover {
+    background-color: #e3e3e3;
+}
+
+/* Trait vertical à gauche au hover */
+.section-li::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color:#17abb3;
+    transform: scaleY(0);
+    transition: transform 0.3s;
+    transform-origin: top;
+}
+
+.section-li:hover::before {
+    transform: scaleY(1);
+}
+
+/* Texte principal */
+.section-li .li-text {
+    flex: 1;
+    font-weight: 700;
+}
+
+/* Time à droite */
+.section-li .section-time { 
+    color: #17abb3;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Small en dessous */
+.section-li .section-small {
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    font-weight: 600;
+    font-size: 1em;
+    color: #333;
+}
+
+/* ===========================
+   LANGUES SPANS
+=========================== */
+aside li span.fr { margin-left: 60px; }
+aside li span.en { margin-left: 110px; }
+aside li span.es { margin-left: 140px; }
+
+/* ===========================
+   ÉTOILES DE COMPÉTENCES
+=========================== */
+.stars {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.star {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #17abb3; /* contour bleu */
+    background-color: #fff;
+    clip-path: polygon(
+        50% 0%, 63% 38%, 100% 38%,
+        69% 59%, 82% 100%, 50% 75%,
+        18% 100%, 31% 59%, 0% 38%, 37% 38%
+    );
+}
+
+.star.filled {
+    background-color: #17abb3;
+}
+
+/* Ajustement du positionnement des étoiles par compétence */
+aside ul:first-of-type li:nth-child(1) .stars { margin-left: 100px; }
+aside ul:first-of-type li:nth-child(2) .stars { margin-left: 118px; }
+aside ul:first-of-type li:nth-child(3) .stars { margin-left: 66px; }
+aside ul:first-of-type li:nth-child(4) .stars { margin-left: 114px; }
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    height: 100px;
+    background-color: #17abb3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    padding: 10px 0;
+}
+
+footer address {
+    display: flex;
+    gap: 20px;
+}
+
+footer address a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer address a[href*="linkedin"] { background-image: url("../icons/linkedin.png"); }
+footer address a[href*="github"] { background-image: url("../icons/github.png"); }
+footer address a[href*="instagram"] { background-image: url("../icons/instagram.png"); }
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer a img {
+    transition: opacity 0.3s ease;
+}
+
+footer a img:hover {
+    opacity: 0.8;
+}
+
+/* ===========================
+   TEXT SECTION PROFIL
+=========================== */
+section p {
+    text-indent: 50px;
+    text-align: justify;
+}
+
+/* ===========================
+   MEDIA QUERIES RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    main { flex-direction: column; }
+    aside, section { width: 100%; padding: 10px; }
 }

@@ -112,18 +112,3 @@ header a img.photo-profil {
     align-items: center;
 }
 
-.icon-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;             /* taille du fond rond */
-    height: 30px;
-    background-color: #ffffff; /* rond blanc derrière l’icône */
-    border-radius: 50%;
-}
-
-.icon-wrapper img {
-    width: 16px;             /* taille de l’icône PNG */
-    height: 16px;
-}
-

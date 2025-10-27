@@ -1,32 +1,28 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 /* ===========================
-   MEDIA QUERIES
+   GLOBAL
 =========================== */
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
-
-    aside, section {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-/* ===========================
-   FONTS & TYPOGRAPHY
-=========================== */
-h1, h2 {
-    font-family: 'Lato', sans-serif;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #f5f5f5;
+    margin: 0;
 }
 
+/* ===========================
+   FONTS
+=========================== */
+h1, h2 {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Font-face Raleway */
 @font-face {
     font-family: "Raleway";
     src: url("../fonts/Raleway-VariableFont_wght.woff") format("woff"),
@@ -51,7 +47,6 @@ body {
     max-width: 1160px;
     margin: auto;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 main {
@@ -60,9 +55,11 @@ main {
 
 aside, section {
     padding: 20px;
-    box-sizing: border-box;
 }
 
+/* ===========================
+   ASIDE & SECTION 
+=========================== */
 aside {
     width: 30%;
     background-color: #e3e3e3;
@@ -74,9 +71,9 @@ section {
 }
 
 /* ===========================
-   HEADER & FOOTER
+   HEADER
 =========================== */
-header, footer {
+header {
     background-color: #17abb3;
     display: flex;
     align-items: center;
@@ -86,7 +83,7 @@ header a img.photo-profil {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid #ffffff;
+    border: 3px solid #fff;
     object-fit: cover;
     margin: 40px 100px;
     cursor: pointer;
@@ -100,7 +97,7 @@ header a img.photo-profil:hover {
 .header-text {
     display: flex;
     flex-direction: column;
-    color: #ffffff;
+    color: #fff;
     margin-left: 150px;
 }
 
@@ -108,18 +105,8 @@ header a img.photo-profil:hover {
     margin: 0;
 }
 
-.header-text h1 {
-    margin-left: 20px;
-}
-
-.header-text h2 {
-    margin-top: 5px;
-}
-
-.header-text address a {
-    text-decoration: none;
-    color: #fff;
-}
+.header-text h1 { margin-left: 20px; }
+.header-text h2 { margin-top: 5px; }
 
 .header-text address {
     display: flex;
@@ -144,8 +131,13 @@ header a img.photo-profil:hover {
     gap: 5px;
 }
 
+.header-text address a {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* ===========================
-   TITRES
+   TITLES
 =========================== */
 aside h2,
 section h2 {
@@ -155,22 +147,15 @@ section h2 {
 /* ===========================
    LISTES
 =========================== */
-/* Section - list-style none */
-section ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-/* Aside - premières listes sans puce */
-aside ul:nth-of-type(1),
+section ul,
+aside ul:first-of-type,
 aside ul:nth-of-type(2) {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
 
-/* Aside - dernières listes avec carrés colorés */
+/* Carrés colorés pour dernières listes */
 aside ul:nth-of-type(3),
 aside ul:nth-of-type(4) {
     list-style-type: square;
@@ -188,18 +173,16 @@ aside ul:nth-of-type(4) li::marker {
 main *:not(h2):not(time) {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    color: #333333;
+    color: #333;
 }
 
-/* Aside - premières listes en gras */
+/* Bold sur premières listes de aside */
 aside ul:first-of-type li,
 aside ul:nth-of-type(2) li {
     font-weight: 700;
 }
 
-
-
-/* Aside - texte plus grand */
+/* Texte plus grand dans aside */
 aside p,
 aside span,
 aside ul:nth-of-type(3) li,
@@ -209,9 +192,8 @@ aside small {
 }
 
 /* ===========================
-   SECTION ELEMENTS
+   SECTION LI + TIME + SMALL
 =========================== */
-/* Classe pour gérer li + time + small proprement */
 .section-li {
     display: flex;
     justify-content: space-between;
@@ -219,76 +201,153 @@ aside small {
     flex-wrap: wrap;
     margin-bottom: 10px;
     font-family: "Raleway", sans-serif;
+    position: relative;
+    transition: background-color 0.3s;
 }
 
+.section-li:hover {
+    background-color: #e3e3e3;
+}
+
+/* Trait vertical à gauche au hover */
+.section-li::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color:#17abb3;
+    transform: scaleY(0);
+    transition: transform 0.3s;
+    transform-origin: top;
+}
+
+.section-li:hover::before {
+    transform: scaleY(1);
+}
+
+/* Texte principal */
 .section-li .li-text {
     flex: 1;
     font-weight: 700;
 }
 
-.section-li .section-time {
-    font-weight: 600;
+/* Time à droite */
+.section-li .section-time { 
     color: #17abb3;
+    font-weight: 600;
     margin-left: 10px;
 }
 
+/* Small en dessous */
 .section-li .section-small {
     display: block;
     width: 100%;
     margin-top: 2px;
     font-weight: 600;
     font-size: 1em;
-    color: #333333;
+    color: #333;
 }
 
-aside li span.fr {
-    margin-left: 60px; /* ajuste pour Français */
-}
+/* ===========================
+   LANGUES SPANS
+=========================== */
+aside li span.fr { margin-left: 60px; }
+aside li span.en { margin-left: 110px; }
+aside li span.es { margin-left: 140px; }
 
-aside li span.en {
-    margin-left: 110px; /* ajuste pour Anglais */
-}
-
-aside li span.es {
-    margin-left: 140px; /* ajuste pour Espagnol */
+/* ===========================
+   ÉTOILES DE COMPÉTENCES
+=========================== */
+.stars {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 .star {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 2px;
-  background-color: #e0e0e0; /* étoile vide */
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-  );
+    width: 10px;
+    height: 10px;
+    border: 1px solid #17abb3; /* contour bleu */
+    background-color: #fff;
+    clip-path: polygon(
+        50% 0%, 63% 38%, 100% 38%,
+        69% 59%, 82% 100%, 50% 75%,
+        18% 100%, 31% 59%, 0% 38%, 37% 38%
+    );
 }
 
 .star.filled {
-  background-color: #17abb3; /* étoile remplie */
+    background-color: #17abb3;
 }
 
-.stars {
-  display: inline-flex;
-  gap: 6px; /* espace entre les étoiles */
-  vertical-align: middle;
+/* Ajustement du positionnement des étoiles par compétence */
+aside ul:first-of-type li:nth-child(1) .stars { margin-left: 100px; }
+aside ul:first-of-type li:nth-child(2) .stars { margin-left: 118px; }
+aside ul:first-of-type li:nth-child(3) .stars { margin-left: 66px; }
+aside ul:first-of-type li:nth-child(4) .stars { margin-left: 114px; }
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    height: 100px;
+    background-color: #17abb3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    padding: 10px 0;
 }
 
-/* Liste des compétences - ajustement du positionnement des étoiles */
-aside ul:first-of-type li:nth-child(1) .stars {
-    margin-left: 100px; /* HTML */
+footer address {
+    display: flex;
+    gap: 20px;
 }
 
-aside ul:first-of-type li:nth-child(2) .stars {
-    margin-left: 118px; /* CSS */
+footer address a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-aside ul:first-of-type li:nth-child(3) .stars {
-    margin-left: 66px; /* JavaScript */
+footer address a[href*="linkedin"] { background-image: url("../icons/linkedin.png"); }
+footer address a[href*="github"] { background-image: url("../icons/github.png"); }
+footer address a[href*="instagram"] { background-image: url("../icons/instagram.png"); }
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
-aside ul:first-of-type li:nth-child(4) .stars {
-    margin-left: 114px; /* PHP */
+footer a img {
+    transition: opacity 0.3s ease;
 }
 
+footer a img:hover {
+    opacity: 0.8;
+}
+
+/* ===========================
+   TEXT SECTION PROFIL
+=========================== */
+section p {
+    text-indent: 50px;
+    text-align: justify;
+}
+
+/* ===========================
+   MEDIA QUERIES RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    main { flex-direction: column; }
+    aside, section { width: 100%; padding: 10px; }
+}

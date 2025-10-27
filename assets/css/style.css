@@ -274,6 +274,49 @@ aside ul:first-of-type li:nth-child(2) .stars { margin-left: 118px; } /* CSS */
 aside ul:first-of-type li:nth-child(3) .stars { margin-left: 66px; }  /* JS */
 aside ul:first-of-type li:nth-child(4) .stars { margin-left: 114px; } /* PHP */
 
+/* ===========================
+   FOOTER
+=========================== */
 footer {
-    height: 100px;
+    height: 100px;               /* hauteur souhaitée */
+    background-color: #17abb3;   /* même couleur que le header */
+    display: flex;
+    flex-direction: column;      /* icônes au-dessus, texte en dessous */
+    align-items: center;         /* centrer horizontalement */
+    justify-content: center;     /* centrer verticalement */
+    gap: 10px;                   /* espace entre icônes et texte */
+    color: #fff;
+    padding: 10px 0;
+}
+
+footer address {
+    display: flex;
+    gap: 20px;                   /* espacement entre les icônes */
+}
+
+footer address a {
+    display: inline-block;
+    width: 30px;                 /* taille des icônes */
+    height: 30px;
+    text-indent: -9999px;        /* masque le texte affiché */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer address a[href*="linkedin"] {
+    background-image: url("../icons/linkedin.png");
+}
+
+footer address a[href*="github"] {
+    background-image: url("../icons/github.png");
+}
+
+footer address a[href*="instagram"] {
+    background-image: url("../icons/instagram.png");
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }

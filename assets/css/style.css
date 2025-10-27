@@ -233,3 +233,7 @@ aside ul:nth-of-type(4) li {
 }
 
 
+section ul li .small-block {
+    display: block;   /* passe le small à la ligne */
+    margin-top: 2px;  /* petit espace si nécessaire */
+    

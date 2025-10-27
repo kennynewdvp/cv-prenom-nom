@@ -174,3 +174,9 @@ main *:not(h2):not(time) {
     font-weight: 600;
 }
 
+/* Seules les deux premières listes de aside (Compétences et Langues) */
+aside ul:first-of-type li,
+aside ul:nth-of-type(2) li {
+    
+}
+
